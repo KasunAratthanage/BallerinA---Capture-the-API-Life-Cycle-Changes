@@ -2,7 +2,7 @@ import ballerina/http;
 import ballerina/io;
 
 endpoint http:Listener listener {
-    port: 9096
+    port: 9099
 };
 
 map<json> notificationservice;
@@ -33,7 +33,7 @@ service<http:Service> hello bind listener {
                 int i = 0;
                 string output = "";
 
-                while (i < 20) {
+                while (i < lengthof array) {
                     //io:println("  " + array[i]);
                     output += array[i] + "  \n  ";
                     i = i + 1;
@@ -78,7 +78,7 @@ service<http:Service> hello bind listener {
 
                 string output = "";
 
-                while (i < 20) {
+                while (i < lengthof array) {
                     //io:println("  " + array[i]);
                     output += array[i] + "  \n  ";
                     i = i + 1;
@@ -117,8 +117,3 @@ service<http:Service> hello bind listener {
     }
 
 }
-
-
-
-
-
